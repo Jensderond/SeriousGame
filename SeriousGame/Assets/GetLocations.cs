@@ -1,22 +1,21 @@
-﻿using System.Collections;
+﻿using Mapbox.Map;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mapbox.Utils;
 
 public class GetLocations : MonoBehaviour {
 
+    public Mapbox.Unity.Map.AbstractMap map;
+
     IEnumerator Start()
     {
-        print("Hi");
         // First, check if user has location service enabled
         if (!Input.location.isEnabledByUser)
         {
-            print("break");
             yield break;
         }
-
-
-        print("Start");
-        // Start service before querying location
+        
         Input.location.Start();
 
         // Wait until service initializes
@@ -42,8 +41,15 @@ public class GetLocations : MonoBehaviour {
         }
         else
         {
-            // Access granted and location value could be retrieved
-            print("Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
+            while( Input.location.status == LocationServiceStatus.Running )
+            {
+                Mapbox.Utils.Vector2d newLocation = new Mapbox.Utils.Vector2d(Input.location.lastData.latitude, Input.location.lastData.longitude);
+                map.UpdateMap(newLocation, map.Zoom);
+                // Access granted and location value could be retrieved
+                print("Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
+                yield return new WaitForSeconds(10);
+            }
+            
         }
 
         // Stop service if there is no need to query location updates continuously
