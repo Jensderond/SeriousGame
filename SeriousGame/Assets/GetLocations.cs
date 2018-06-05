@@ -7,9 +7,12 @@ using Mapbox.Utils;
 public class GetLocations : MonoBehaviour {
 
     public Mapbox.Unity.Map.AbstractMap map;
+    private Rigidbody cube;
 
     IEnumerator Start()
     {
+        cube = GetComponent<Rigidbody>();
+
         // First, check if user has location service enabled
         if (!Input.location.isEnabledByUser)
         {
@@ -43,7 +46,8 @@ public class GetLocations : MonoBehaviour {
         {
             while( Input.location.status == LocationServiceStatus.Running )
             {
-                Mapbox.Utils.Vector2d newLocation = new Mapbox.Utils.Vector2d(Input.location.lastData.latitude, Input.location.lastData.longitude);
+                transform.rotation = Quaternion.Euler(0, -Input.compass.trueHeading, 0);
+                Vector2d newLocation = new Mapbox.Utils.Vector2d(Input.location.lastData.latitude, Input.location.lastData.longitude);
                 map.UpdateMap(newLocation, map.Zoom);
                 // Access granted and location value could be retrieved
                 print("Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
