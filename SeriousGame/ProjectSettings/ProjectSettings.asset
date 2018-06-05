@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: dd5909b975a2b4e87b0bf02ff244c916
+  productGUID: 154dee8289e3d184cb0cfec9d3ae252c
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -662,9 +662,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 4ccec4d1-002c-497f-9578-397c6d57828b
-  projectName: SeriousGame (2)
-  organizationId: katsperry
+  cloudProjectId: ccfd49da-580f-42d2-b1d2-b3515a0c4f14
+  projectName: SeriousGame
+  organizationId: r3v0productions
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
