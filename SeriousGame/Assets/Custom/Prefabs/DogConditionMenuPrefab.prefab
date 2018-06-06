@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224994346856291042}
   - component: {fileID: 222721786845353952}
-  - component: {fileID: 114490352998500700}
   - component: {fileID: 114514358434643012}
+  - component: {fileID: 114357177974747652}
   m_Layer: 5
   m_Name: WaterRadial
   m_TagString: Untagged
@@ -227,8 +227,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224558901471153106}
   - component: {fileID: 222158738439764384}
-  - component: {fileID: 114638109449865436}
   - component: {fileID: 114398568479825422}
+  - component: {fileID: 114439868652016136}
   m_Layer: 5
   m_Name: FoodRadial
   m_TagString: Untagged
@@ -282,8 +282,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224603051699142876}
   - component: {fileID: 222066089882389578}
-  - component: {fileID: 114312491749561114}
   - component: {fileID: 114679544774091980}
+  - component: {fileID: 114423472888083852}
   m_Layer: 5
   m_Name: EnergyRadial
   m_TagString: Untagged
@@ -373,23 +373,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
---- !u!114 &114312491749561114
+--- !u!114 &114357177974747652
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1936088047660626}
+  m_GameObject: {fileID: 1014000863820308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20c6dbf0102c7bc468113ccdd97dad83, type: 3}
+  m_Script: {fileID: 11500000, guid: 3256eee5d37da1f45a13d8a6635be6b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingBar: {fileID: 224581627735593298}
-  textPercent: {fileID: 224429968729070774}
+  loadingBar: {fileID: 224539342836740816}
+  textPercent: {fileID: 224173577877668568}
   isOn: 1
   restart: 0
   currentPercent: 50
-  speed: 8
+  speed: 6
   decayPerTick: 1
   enableSpecified: 1
   enableLoop: 0
@@ -472,7 +472,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114638109449865436}
+      - m_Target: {fileID: 114439868652016136}
         m_MethodName: AddToSpecifiedPercentage
         m_Mode: 4
         m_Arguments:
@@ -539,6 +539,48 @@ MonoBehaviour:
   m_FillAmount: 0.1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114423472888083852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1936088047660626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3256eee5d37da1f45a13d8a6635be6b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingBar: {fileID: 224581627735593298}
+  textPercent: {fileID: 224429968729070774}
+  isOn: 1
+  restart: 0
+  currentPercent: 50
+  speed: 8
+  decayPerTick: 1
+  enableSpecified: 1
+  enableLoop: 0
+  specifiedValue: 35
+--- !u!114 &114439868652016136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1825005372237838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3256eee5d37da1f45a13d8a6635be6b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingBar: {fileID: 224197917097926554}
+  textPercent: {fileID: 224814503194057652}
+  isOn: 1
+  restart: 0
+  currentPercent: 50
+  speed: 7
+  decayPerTick: 1
+  enableSpecified: 1
+  enableLoop: 0
+  specifiedValue: 30
 --- !u!114 &114473976965291076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -572,27 +614,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
---- !u!114 &114490352998500700
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1014000863820308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20c6dbf0102c7bc468113ccdd97dad83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadingBar: {fileID: 224539342836740816}
-  textPercent: {fileID: 224173577877668568}
-  isOn: 1
-  restart: 0
-  currentPercent: 50
-  speed: 5
-  decayPerTick: 1
-  enableSpecified: 1
-  enableLoop: 0
-  specifiedValue: 25
 --- !u!114 &114495017577797202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -694,7 +715,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114490352998500700}
+      - m_Target: {fileID: 114357177974747652}
         m_MethodName: AddToSpecifiedPercentage
         m_Mode: 4
         m_Arguments:
@@ -761,27 +782,6 @@ MonoBehaviour:
   m_FillAmount: 0.1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114638109449865436
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1825005372237838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20c6dbf0102c7bc468113ccdd97dad83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadingBar: {fileID: 224197917097926554}
-  textPercent: {fileID: 224814503194057652}
-  isOn: 1
-  restart: 0
-  currentPercent: 50
-  speed: 5
-  decayPerTick: 2
-  enableSpecified: 1
-  enableLoop: 0
-  specifiedValue: 25
 --- !u!114 &114670836520871300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -848,7 +848,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114312491749561114}
+      - m_Target: {fileID: 114423472888083852}
         m_MethodName: AddToSpecifiedPercentage
         m_Mode: 4
         m_Arguments:
