@@ -388,11 +388,12 @@ MonoBehaviour:
   textPercent: {fileID: 224429968729070774}
   isOn: 1
   restart: 0
-  currentPercent: 0
+  currentPercent: 50
   speed: 8
+  decayPerTick: 1
   enableSpecified: 1
   enableLoop: 0
-  specifiedValue: 0
+  specifiedValue: 25
 --- !u!114 &114374737815024288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -586,11 +587,12 @@ MonoBehaviour:
   textPercent: {fileID: 224173577877668568}
   isOn: 1
   restart: 0
-  currentPercent: 0
+  currentPercent: 50
   speed: 5
+  decayPerTick: 1
   enableSpecified: 1
   enableLoop: 0
-  specifiedValue: 0
+  specifiedValue: 25
 --- !u!114 &114495017577797202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -774,11 +776,12 @@ MonoBehaviour:
   textPercent: {fileID: 224814503194057652}
   isOn: 1
   restart: 0
-  currentPercent: 0
+  currentPercent: 50
   speed: 5
+  decayPerTick: 2
   enableSpecified: 1
   enableLoop: 0
-  specifiedValue: 0
+  specifiedValue: 25
 --- !u!114 &114670836520871300
 MonoBehaviour:
   m_ObjectHideFlags: 1
