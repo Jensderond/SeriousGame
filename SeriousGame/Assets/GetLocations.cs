@@ -46,12 +46,12 @@ public class GetLocations : MonoBehaviour {
         {
             while( Input.location.status == LocationServiceStatus.Running )
             {
-                transform.rotation = Quaternion.Euler(0, -Input.compass.trueHeading, 0);
+               // transform.rotation = Quaternion.Euler(-Input.compass.trueHeading, -Input.GetAxisRaw("horizon"), 0);
                 Vector2d newLocation = new Mapbox.Utils.Vector2d(Input.location.lastData.latitude, Input.location.lastData.longitude);
                 map.UpdateMap(newLocation, map.Zoom);
                 // Access granted and location value could be retrieved
                 print("Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
-                yield return new WaitForSeconds(10);
+                yield return new WaitForSeconds(2);
             }
             
         }
