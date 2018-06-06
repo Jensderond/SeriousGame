@@ -12,6 +12,8 @@ public class GetLocations : MonoBehaviour {
     IEnumerator Start()
     {
         cube = GetComponent<Rigidbody>();
+        var anim = GetComponent<Animator>();
+        int walkHash = Animator.StringToHash("walk");
 
         // First, check if user has location service enabled
         if (!Input.location.isEnabledByUser)
@@ -44,14 +46,25 @@ public class GetLocations : MonoBehaviour {
         }
         else
         {
-            while( Input.location.status == LocationServiceStatus.Running )
+            Vector2d oldLocation = new Mapbox.Utils.Vector2d(Input.location.lastData.latitude, Input.location.lastData.longitude);
+            while ( Input.location.status == LocationServiceStatus.Running )
             {
-               // transform.rotation = Quaternion.Euler(-Input.compass.trueHeading, -Input.GetAxisRaw("horizon"), 0);
+                // transform.rotation = Quaternion.Euler(-Input.compass.trueHeading, -Input.GetAxisRaw("horizon"), 0);
+                
                 Vector2d newLocation = new Mapbox.Utils.Vector2d(Input.location.lastData.latitude, Input.location.lastData.longitude);
+                if (newLocation.x == oldLocation.x || newLocation.y == oldLocation.y)
+                {
+                    anim.ResetTrigger(walkHash);
+                }
+                else
+                {
+                     anim.SetTrigger(walkHash);
+                }
                 map.UpdateMap(newLocation, map.Zoom);
                 // Access granted and location value could be retrieved
                 print("Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
-                yield return new WaitForSeconds(2);
+                oldLocation = new Mapbox.Utils.Vector2d(Input.location.lastData.latitude, Input.location.lastData.longitude);
+                yield return new WaitForSeconds(3);
             }
             
         }

@@ -17,6 +17,8 @@ public class Rotate : MonoBehaviour
     {
         Input.location.Start();
         Input.compass.enabled = true;
+ 
+
     }
 
     // Update is called once per frame
