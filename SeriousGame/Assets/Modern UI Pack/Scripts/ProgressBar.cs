@@ -46,4 +46,16 @@ public class ProgressBar : MonoBehaviour {
 		loadingBar.GetComponent<Image> ().fillAmount = currentPercent / 100;
 		textPercent.GetComponent<Text> ().text = ((int)currentPercent).ToString ("F0") + "%";
 	}
+    public void AddToSpecifiedPercentage(float amountToAdd)
+    {
+        if(this.specifiedValue+amountToAdd > 100)
+        {
+            specifiedValue = 100;
+        }
+        else
+        {
+            specifiedValue += amountToAdd;
+        }
+        
+    }
 }
