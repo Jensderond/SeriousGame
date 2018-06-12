@@ -3,24 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mapbox.Utils;
+using UnityEngine.UI;
+using System;
 
-public class GetLocations : MonoBehaviour {
+public class GetLocations : MonoBehaviour
+{
 
     public Mapbox.Unity.Map.AbstractMap map;
+    public Text distanceText;
     private Rigidbody cube;
+    private double distance;
+    private double totalDistance;
 
     IEnumerator Start()
     {
-        cube = GetComponent<Rigidbody>();
         var anim = GetComponent<Animator>();
         int walkHash = Animator.StringToHash("walk");
-
+        totalDistance = 0;
         // First, check if user has location service enabled
         if (!Input.location.isEnabledByUser)
         {
             yield break;
         }
-        
+
         Input.location.Start();
 
         // Wait until service initializes
@@ -46,30 +51,49 @@ public class GetLocations : MonoBehaviour {
         }
         else
         {
-            Vector2d oldLocation = new Mapbox.Utils.Vector2d(Input.location.lastData.latitude, Input.location.lastData.longitude);
-            while ( Input.location.status == LocationServiceStatus.Running )
+            float[] oldgps = new float[] { Input.location.lastData.latitude, Input.location.lastData.longitude };
+            Vector2d oldLocation = new Vector2d(oldgps[0], oldgps[1]);
+
+            while (Input.location.status == LocationServiceStatus.Running)
             {
-                // transform.rotation = Quaternion.Euler(-Input.compass.trueHeading, -Input.GetAxisRaw("horizon"), 0);
-                
-                Vector2d newLocation = new Mapbox.Utils.Vector2d(Input.location.lastData.latitude, Input.location.lastData.longitude);
+                Vector2d newLocation = new Vector2d(Input.location.lastData.latitude, Input.location.lastData.longitude);
                 if (newLocation.x == oldLocation.x || newLocation.y == oldLocation.y)
                 {
                     anim.ResetTrigger(walkHash);
                 }
                 else
                 {
-                     anim.SetTrigger(walkHash);
+                    anim.SetTrigger(walkHash);
+                    Calcdistance(oldgps[0], oldgps[1], Input.location.lastData.latitude, Input.location.lastData.longitude);
                 }
                 map.UpdateMap(newLocation, map.Zoom);
-                // Access granted and location value could be retrieved
-                print("Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
-                oldLocation = new Mapbox.Utils.Vector2d(Input.location.lastData.latitude, Input.location.lastData.longitude);
+
+                distanceText.text = ("Distance: " + Math.Round(totalDistance, 2) + " km").Replace('.', ',');
+                oldLocation = new Vector2d(Input.location.lastData.latitude, Input.location.lastData.longitude);
+                oldgps[0] = Input.location.lastData.latitude;
+                oldgps[1] = Input.location.lastData.longitude;
+
                 yield return new WaitForSeconds(3);
             }
-            
-        }
 
+        }
         // Stop service if there is no need to query location updates continuously
         Input.location.Stop();
+    }
+
+    public void Calcdistance(float lat1, float lon1, float lat2, float lon2)
+    {
+
+        var R = 6378.137; // Radius of earth in KM
+        var dLat = lat2 * Mathf.PI / 180 - lat1 * Mathf.PI / 180;
+        var dLon = lon2 * Mathf.PI / 180 - lon1 * Mathf.PI / 180;
+        float a = Mathf.Sin(dLat / 2) * Mathf.Sin(dLat / 2) +
+            Mathf.Cos(lat1 * Mathf.PI / 180) * Mathf.Cos(lat2 * Mathf.PI / 180) *
+            Mathf.Sin(dLon / 2) * Mathf.Sin(dLon / 2);
+        var c = 2 * Mathf.Atan2(Mathf.Sqrt(a), Mathf.Sqrt(1 - a));
+        distance = R * c;
+        //  distance = distance * 1000f; // meters
+
+        totalDistance = totalDistance + distance;
     }
 }
