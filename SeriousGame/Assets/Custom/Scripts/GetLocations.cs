@@ -1,22 +1,24 @@
-﻿using Mapbox.Map;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Mapbox.Utils;
-using UnityEngine.UI;
+﻿using Mapbox.Utils;
 using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class GetLocations : MonoBehaviour
 {
 
     public Mapbox.Unity.Map.AbstractMap map;
     public Text distanceText;
+    public Text pointText;
+    public int amountMeters;
     private Rigidbody cube;
     private double distance;
     private double totalDistance;
+    private points pointclass;
 
     IEnumerator Start()
     {
+        pointclass = new points();
         var anim = GetComponent<Animator>();
         int walkHash = Animator.StringToHash("walk");
         totalDistance = 0;
@@ -57,22 +59,22 @@ public class GetLocations : MonoBehaviour
             while (Input.location.status == LocationServiceStatus.Running)
             {
                 Vector2d newLocation = new Vector2d(Input.location.lastData.latitude, Input.location.lastData.longitude);
-                if (newLocation.x == oldLocation.x || newLocation.y == oldLocation.y)
+                if (newLocation.x == oldLocation.x && newLocation.y == oldLocation.y)
                 {
                     anim.ResetTrigger(walkHash);
                 }
                 else
                 {
                     anim.SetTrigger(walkHash);
-                    Calcdistance(oldgps[0], oldgps[1], Input.location.lastData.latitude, Input.location.lastData.longitude);
                 }
                 map.UpdateMap(newLocation, map.Zoom);
-
+                Calcdistance(oldgps[0], oldgps[1], Input.location.lastData.latitude, Input.location.lastData.longitude);
                 distanceText.text = ("Distance: " + Math.Round(totalDistance, 2) + " km").Replace('.', ',');
-                oldLocation = new Vector2d(Input.location.lastData.latitude, Input.location.lastData.longitude);
+                pointText.text = "Points: " + pointclass.setPoints(totalDistance, amountMeters);
+
+                oldLocation = newLocation;
                 oldgps[0] = Input.location.lastData.latitude;
                 oldgps[1] = Input.location.lastData.longitude;
-
                 yield return new WaitForSeconds(3);
             }
 
