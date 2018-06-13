@@ -10,9 +10,12 @@ public class GameController : MonoBehaviour {
 
     public static GameController gameController;
 
-    public float EnergyLevel;// { get; set; }
-    public float FoodLevel;// { get; set; }
-    public float WaterLevel;// { get; set; }
+    [Range(0, 100)] public float EnergyLevel;// { get; set; }
+    [Range(0, 100)] public float FoodLevel;// { get; set; }
+    [Range(0, 100)] public float WaterLevel;// { get; set; }
+    public int OfflineHours;// { get; set; }
+    public DateTime OldDate;// { get; set; }
+    public DateTime CurrentDate;
 
 
     private void Awake()
@@ -39,6 +42,10 @@ public class GameController : MonoBehaviour {
             EnergyLevel = playerData.EnergyLevel;
             FoodLevel = playerData.FoodLevel;
             WaterLevel = playerData.WaterLevel;
+            OldDate = playerData.OldDate;
+            CurrentDate = System.DateTime.Now;
+            TimeSpan difference = CurrentDate.Subtract(OldDate);
+            OfflineHours = difference.Hours;
         }
     }
 
@@ -50,17 +57,19 @@ public class GameController : MonoBehaviour {
         {
             EnergyLevel = EnergyLevel,
             FoodLevel = FoodLevel,
-            WaterLevel = WaterLevel
-        };
+            WaterLevel = WaterLevel,
+            OldDate = System.DateTime.Now
+
+    };
 
         binaryFormatter.Serialize( fileStream, playerData );
         fileStream.Close();
     }
 
+
     // Use this for initialization
     void Start () {
-		
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -74,4 +83,5 @@ class PlayerData
     public float EnergyLevel { get; set; }
     public float FoodLevel { get; set; }
     public float WaterLevel { get; set; }
+    public DateTime OldDate { get; set; }
 }

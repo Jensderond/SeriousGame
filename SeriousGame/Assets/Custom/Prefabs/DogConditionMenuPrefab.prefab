@@ -394,6 +394,7 @@ MonoBehaviour:
   enableSpecified: 1
   enableLoop: 0
   specifiedValue: 25
+  currentRadial: 0
 --- !u!114 &114374737815024288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -560,6 +561,7 @@ MonoBehaviour:
   enableSpecified: 1
   enableLoop: 0
   specifiedValue: 35
+  currentRadial: 2
 --- !u!114 &114439868652016136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -581,6 +583,7 @@ MonoBehaviour:
   enableSpecified: 1
   enableLoop: 0
   specifiedValue: 30
+  currentRadial: 1
 --- !u!114 &114473976965291076
 MonoBehaviour:
   m_ObjectHideFlags: 1

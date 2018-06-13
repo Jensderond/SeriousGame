@@ -567,7 +567,7 @@ Prefab:
     - target: {fileID: 224528844374986690, guid: a20d5ec3cba77f04eba258e422d506fb,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224528844374986690, guid: a20d5ec3cba77f04eba258e422d506fb,
         type: 2}
@@ -607,7 +607,7 @@ Prefab:
     - target: {fileID: 224528844374986690, guid: a20d5ec3cba77f04eba258e422d506fb,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224528844374986690, guid: a20d5ec3cba77f04eba258e422d506fb,
         type: 2}
@@ -662,7 +662,7 @@ Prefab:
     - target: {fileID: 114357177974747652, guid: a20d5ec3cba77f04eba258e422d506fb,
         type: 2}
       propertyPath: specifiedValue
-      value: 36
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 114357177974747652, guid: a20d5ec3cba77f04eba258e422d506fb,
         type: 2}
@@ -1219,7 +1219,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!28 &200537158
 Texture2D:
@@ -1850,6 +1850,63 @@ Texture2D:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &271095004
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4391014172956822, guid: 0c0806c51fb84b342b581c8839f3d11e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 117.729095
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391014172956822, guid: 0c0806c51fb84b342b581c8839f3d11e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 68.73556
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391014172956822, guid: 0c0806c51fb84b342b581c8839f3d11e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -5.7827234
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391014172956822, guid: 0c0806c51fb84b342b581c8839f3d11e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391014172956822, guid: 0c0806c51fb84b342b581c8839f3d11e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391014172956822, guid: 0c0806c51fb84b342b581c8839f3d11e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391014172956822, guid: 0c0806c51fb84b342b581c8839f3d11e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391014172956822, guid: 0c0806c51fb84b342b581c8839f3d11e, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114658965323295496, guid: 0c0806c51fb84b342b581c8839f3d11e,
+        type: 2}
+      propertyPath: FoodLevel
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114658965323295496, guid: 0c0806c51fb84b342b581c8839f3d11e,
+        type: 2}
+      propertyPath: WaterLevel
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114658965323295496, guid: 0c0806c51fb84b342b581c8839f3d11e,
+        type: 2}
+      propertyPath: EnergyLevel
+      value: 45
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0c0806c51fb84b342b581c8839f3d11e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!28 &272757965
 Texture2D:
   m_ObjectHideFlags: 0
@@ -1958,7 +2015,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!28 &287398197
 Texture2D:
@@ -2357,7 +2414,7 @@ Transform:
   m_Children:
   - {fileID: 863153451}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!28 &342257119
 Texture2D:
@@ -2803,7 +2860,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 595cf544943e29a4d9a7b813e4218a3c, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 595cf544943e29a4d9a7b813e4218a3c, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -3083,7 +3140,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 437998, guid: f910856b88b298243a4a01cd89793478, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 11434972, guid: f910856b88b298243a4a01cd89793478, type: 2}
       propertyPath: furnitureTextures
@@ -3330,7 +3387,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 443676, guid: 4de20dfcad978c6419dc201c6eb150e8, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11438400, guid: 4de20dfcad978c6419dc201c6eb150e8, type: 2}
       propertyPath: furnitureTextures
@@ -5019,7 +5076,7 @@ Transform:
   - {fileID: 849378653}
   - {fileID: 1031368977}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!28 &837337238
 Texture2D:
@@ -5322,7 +5379,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e08e523cc4367234e8b33dbe7552795d, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e08e523cc4367234e8b33dbe7552795d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -6253,7 +6310,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!28 &993313764
 Texture2D:
@@ -8503,7 +8560,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 16de22d71aac07c4e8827211e6a16176, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 16de22d71aac07c4e8827211e6a16176, type: 3}
       propertyPath: m_Name
@@ -9893,7 +9950,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 480340, guid: 2f1666ad9b7fdd7459a360619d6ccffd, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 480340, guid: 2f1666ad9b7fdd7459a360619d6ccffd, type: 2}
       propertyPath: m_LocalScale.x
@@ -10143,7 +10200,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!28 &1606858154
 Texture2D:
@@ -10341,7 +10398,7 @@ Transform:
   m_LocalScale: {x: 31, y: 23.398115, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!28 &1618612503
 Texture2D:
@@ -12822,7 +12879,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6ab336aa16c0bff44b38248b73687ce2, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 6ab336aa16c0bff44b38248b73687ce2, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -13072,7 +13129,7 @@ Transform:
   m_LocalScale: {x: 3.162, y: 1.0199999, z: 2.3712883}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2017878171
 Prefab:
@@ -13111,7 +13168,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 16de22d71aac07c4e8827211e6a16176, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 16de22d71aac07c4e8827211e6a16176, type: 3}
       propertyPath: m_LocalScale.z
