@@ -46,11 +46,12 @@ public class GameController : MonoBehaviour {
     {
         BinaryFormatter binaryFormatter = new BinaryFormatter();
         FileStream fileStream = File.Create( Application.persistentDataPath + "playerInfo.data" );
-        PlayerData playerData = new PlayerData();
-
-        playerData.EnergyLevel = EnergyLevel;
-        playerData.FoodLevel = FoodLevel;
-        playerData.WaterLevel = WaterLevel;
+        PlayerData playerData = new PlayerData
+        {
+            EnergyLevel = EnergyLevel,
+            FoodLevel = FoodLevel,
+            WaterLevel = WaterLevel
+        };
 
         binaryFormatter.Serialize( fileStream, playerData );
         fileStream.Close();
