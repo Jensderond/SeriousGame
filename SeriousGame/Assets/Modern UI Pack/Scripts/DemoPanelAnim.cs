@@ -15,8 +15,8 @@ public class DemoPanelAnim : MonoBehaviour {
 	[Header("ANIMATION SETTINGS")]
     private bool fadeOut = false;
     private bool fadeIn = false;
-    [Range(0, 10)public float fadeFactor = 8f;
-    [Range(0, 10)public float growRate = 0.5f;
+    [Range(0, 10)]public float fadeFactor = 8f;
+    [Range(0, 10)]public float growRate = 0.5f;
 
     void Update ()
 	{
