@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: 91d2fb8fbb39fab44b86ce07763f1e74
-timeCreated: 1454974485
-licenseType: Free
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: aug_L
     100002: aug_L_end
@@ -162,32 +160,65 @@ ModelImporter:
     7400006: Wolf_Skeleton|Wolf_Run_Cycle_
     7400008: Wolf_Skeleton|Wolf_seat_
     7400010: Wolf_Skeleton|Wolf_Walk_cycle_
+    7400012: Wolf_Skeleton|Wolf_Walk_cycle_ (1)
     9500000: //RootNode
     13700000: Wolf_obj_body
     13700002: Wolf_obj_body.001
     13700004: Wolf_obj_body.002
     13700006: Wolf_obj_body.003
     13700008: Wolf_obj_fur
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf_Body
+    second: {fileID: 2100000, guid: 3368e7fd425f8344c94c27d0872d81c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf_Claws
+    second: {fileID: 2100000, guid: 798231919710c1d42b8dbfad2dbf5595, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf_Eyes
+    second: {fileID: 2100000, guid: 927e27d9e8d4b6e409fb93b4ed96dda1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf_Fur
+    second: {fileID: 2100000, guid: 3368e7fd425f8344c94c27d0872d81c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf_Teeth
+    second: {fileID: 2100000, guid: 7188703cbb472af428c8459e45803031, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleRotations: 1
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: Wolf_Skeleton|000
@@ -712,10 +743,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Wolf_Skeleton|Wolf_Run_Cycle_
-      takeName: Wolf_Skeleton|Wolf_Run_Cycle_
+      name: Wolf_Skeleton|Wolf_Walk_cycle_ (1)
+      takeName: Wolf_Skeleton|Wolf_Walk_cycle_
       firstFrame: 0
-      lastFrame: 17
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -1239,13 +1270,18 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -1255,9 +1291,11 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -1268,7 +1306,10 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1
