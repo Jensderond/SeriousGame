@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DebugRadials : MonoBehaviour {
+public class DebugRadials : MonoBehaviour
+{
 
     public Transform textPercent;
     public enum RadialOptions { WaterLevel, FoodLevel, EnergyLevel };
     public RadialOptions currentRadial;
 
-    void Update () {
+    void Update()
+    {
         switch (currentRadial)
         {
             case RadialOptions.WaterLevel:
@@ -22,6 +24,6 @@ public class DebugRadials : MonoBehaviour {
                 textPercent.GetComponent<Text>().text = "Energy" + GameController.gameController.EnergyLevel.ToString();
                 break;
         }
-       
+
     }
 }

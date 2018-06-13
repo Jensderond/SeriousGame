@@ -6,7 +6,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
 
     public static GameController gameController;
 
@@ -16,33 +17,35 @@ public class GameController : MonoBehaviour {
     public int OfflineHours;// { get; set; }
     public DateTime OldDate;// { get; set; }
     public DateTime CurrentDate;
+    public int Points;
 
 
     private void Awake()
     {
-        if( gameController == null )
+        if (gameController == null)
         {
-            DontDestroyOnLoad( gameObject );
+            DontDestroyOnLoad(gameObject);
             gameController = this;
         }
-        else if( gameController != this )
+        else if (gameController != this)
         {
-            Destroy( gameObject );
+            Destroy(gameObject);
         }
     }
 
     private void OnEnable()
     {
-        if ( File.Exists( Application.persistentDataPath + "playerInfo.data" ) )
+        if (File.Exists(Application.persistentDataPath + "playerInfo.data"))
         {
             BinaryFormatter binaryFormatter = new BinaryFormatter();
-            FileStream fileStream = File.Open( Application.persistentDataPath + "playerInfo.data", FileMode.Open );
-            PlayerData playerData = (PlayerData) binaryFormatter.Deserialize( fileStream );
+            FileStream fileStream = File.Open(Application.persistentDataPath + "playerInfo.data", FileMode.Open);
+            PlayerData playerData = (PlayerData)binaryFormatter.Deserialize(fileStream);
 
             EnergyLevel = playerData.EnergyLevel;
             FoodLevel = playerData.FoodLevel;
             WaterLevel = playerData.WaterLevel;
             OldDate = playerData.OldDate;
+            Points = playerData.Points;
             CurrentDate = System.DateTime.Now;
             TimeSpan difference = CurrentDate.Subtract(OldDate);
             OfflineHours = difference.Hours;
@@ -52,29 +55,32 @@ public class GameController : MonoBehaviour {
     private void OnDisable()
     {
         BinaryFormatter binaryFormatter = new BinaryFormatter();
-        FileStream fileStream = File.Create( Application.persistentDataPath + "playerInfo.data" );
+        FileStream fileStream = File.Create(Application.persistentDataPath + "playerInfo.data");
         PlayerData playerData = new PlayerData
         {
             EnergyLevel = EnergyLevel,
             FoodLevel = FoodLevel,
             WaterLevel = WaterLevel,
-            OldDate = System.DateTime.Now
+            OldDate = System.DateTime.Now,
+            Points = Points
 
-    };
+        };
 
-        binaryFormatter.Serialize( fileStream, playerData );
+        binaryFormatter.Serialize(fileStream, playerData);
         fileStream.Close();
     }
 
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }
 
 [Serializable]
@@ -84,4 +90,5 @@ class PlayerData
     public float FoodLevel { get; set; }
     public float WaterLevel { get; set; }
     public DateTime OldDate { get; set; }
+    public int Points { get; set; }
 }

@@ -22,16 +22,17 @@ public class DogRadial : MonoBehaviour
     public bool enableLoop;
     [Range(0, 100)] public float specifiedValue;
 
-    public enum RadialOptions{ WaterLevel, FoodLevel, EnergyLevel };
+    public enum RadialOptions { WaterLevel, FoodLevel, EnergyLevel };
     public RadialOptions currentRadial;
 
 
     private bool isFilling;
-    void Start() {
+    void Start()
+    {
         switch (currentRadial)
         {
             case RadialOptions.WaterLevel:
-               specifiedValue = GameController.gameController.WaterLevel;
+                specifiedValue = GameController.gameController.WaterLevel;
                 break;
             case RadialOptions.FoodLevel:
                 specifiedValue = GameController.gameController.FoodLevel;
@@ -44,7 +45,7 @@ public class DogRadial : MonoBehaviour
         int offlineDecay = GameController.gameController.OfflineHours * 5;
 
         // give them a couple of seconds to save their pet... so se to 1 instead of 0
-        if((specifiedValue - offlineDecay) > 1)
+        if ((specifiedValue - offlineDecay) > 1)
         {
             specifiedValue -= offlineDecay;
         }
