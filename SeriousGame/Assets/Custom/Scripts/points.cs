@@ -7,21 +7,24 @@ using UnityEngine.UI;
 public class points : MonoBehaviour {
 
     private int Points;
-    //TODO save newpoints
-
 
     public int setPoints(double distance,int amountMeters)
     {
         var distanceMeters = distance * 1000;
         var newPoints = (int)Math.Round(distanceMeters / amountMeters);
         int totalpoints = newPoints + getPoints();
-
+        Points = totalpoints;
         return totalpoints;
         
     }
     public int getPoints()
     {
-        var i = 0;
-        return i;
+        // return GameController.gameController.Points;
+        return 0;
+    }
+
+    void OnApplicationQuit()
+    {
+       // GameController.gameController.Points = Points;
     }
 }
