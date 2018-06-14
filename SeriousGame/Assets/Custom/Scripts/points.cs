@@ -19,19 +19,19 @@ public class Points : MonoBehaviour {
     }
     public int getPoints()
     {
-        // return GameController.gameController.Points;
-        return 0;
+        return GameController.gameController.Points;
+        //return 0;
     }
 
     void OnApplicationQuit()
     {
-        // GameController.gameController.Points = Points;
+         GameController.gameController.Points = points;
     }
     void OnApplicationPause(bool isPaused)
     {
         if (isPaused)
         {
-            // GameController.gameController.Points = Points;
+             GameController.gameController.Points = points;
         }
     }
 }

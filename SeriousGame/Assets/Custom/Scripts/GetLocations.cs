@@ -99,4 +99,15 @@ public class GetLocations : MonoBehaviour
 
         totalDistance = totalDistance + distance;
     }
+    void OnApplicationQuit()
+    {
+        totalDistance = 0;
+    }
+    void OnApplicationPause(bool isPaused)
+    {
+        if (isPaused)
+        {
+            totalDistance = 0;
+        }
+    }
 }
