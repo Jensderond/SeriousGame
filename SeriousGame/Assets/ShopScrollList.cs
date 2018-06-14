@@ -14,10 +14,10 @@ public class ShopScrollList : MonoBehaviour {
 
     public List<Item> itemList;
     public Transform contentPanel;
-    public Text myGoldDisplay;
+    public Text myPointsDisplay;
     public SimpleObjectPool buttonObjectPool;
 
-    public float gold = 20f;
+    public float points = 20f;
 
     // Use this for initialization
     void Start() {
@@ -25,7 +25,7 @@ public class ShopScrollList : MonoBehaviour {
     }
 
     void RefreshDisplay() {
-        myGoldDisplay.text = "Gold: " + gold.ToString();
+        myPointsDisplay.text = "Punten: " + points.ToString();
         RemoveButtons();
         AddButtons();
     }
@@ -49,8 +49,8 @@ public class ShopScrollList : MonoBehaviour {
     }
 
     public void BuyItem(Item item) {
-        if (gold >= item.price) {
-            gold -= item.price;
+        if (points >= item.price) {
+            points -= item.price;
 
             // Increase Stats
 
