@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     public DateTime OldDate;// { get; set; }
     public DateTime CurrentDate;
     public int Points;
+    public bool FirstTime;
 
 
     private void Awake()
@@ -42,13 +43,13 @@ public class GameController : MonoBehaviour
             PlayerData playerData = (PlayerData)binaryFormatter.Deserialize(fileStream);
 
             EnergyLevel = playerData.EnergyLevel;
+            CurrentDate = DateTime.Now;
             FoodLevel = playerData.FoodLevel;
-            WaterLevel = playerData.WaterLevel;
-            OldDate = playerData.OldDate;
-            Points = playerData.Points;
-            CurrentDate = System.DateTime.Now;
             TimeSpan difference = CurrentDate.Subtract(OldDate);
             OfflineHours = difference.Hours;
+            OldDate = playerData.OldDate;
+            Points = playerData.Points;
+            WaterLevel = playerData.WaterLevel;
         }
     }
 
@@ -59,36 +60,26 @@ public class GameController : MonoBehaviour
         PlayerData playerData = new PlayerData
         {
             EnergyLevel = EnergyLevel,
+            FirstTime = FirstTime,
             FoodLevel = FoodLevel,
-            WaterLevel = WaterLevel,
-            OldDate = System.DateTime.Now,
-            Points = Points
-
+            OldDate = DateTime.Now,
+            Points = Points,
+            WaterLevel = WaterLevel
         };
 
         binaryFormatter.Serialize(fileStream, playerData);
         fileStream.Close();
     }
 
-
-    // Use this for initialization
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
 
 [Serializable]
 class PlayerData
 {
     public float EnergyLevel { get; set; }
+    public bool FirstTime { get; set; }
     public float FoodLevel { get; set; }
-    public float WaterLevel { get; set; }
     public DateTime OldDate { get; set; }
     public int Points { get; set; }
+    public float WaterLevel { get; set; }
 }
