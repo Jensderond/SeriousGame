@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class points : MonoBehaviour {
+public class Points : MonoBehaviour {
 
-    private int Points;
+    private int points;
 
     public int setPoints(double distance,int amountMeters)
     {
         var distanceMeters = distance * 1000;
         var newPoints = (int)Math.Round(distanceMeters / amountMeters);
         int totalpoints = newPoints + getPoints();
-        Points = totalpoints;
+        points = totalpoints;
         return totalpoints;
         
     }
