@@ -14,11 +14,11 @@ public class GetLocations : MonoBehaviour
     private Rigidbody cube;
     private double distance;
     private double totalDistance;
-    private points pointclass;
+    private Points pointClass;
 
     IEnumerator Start()
     {
-        pointclass = new points();
+        pointClass = new Points();
         var anim = GetComponent<Animator>();
         int walkHash = Animator.StringToHash("walk");
         totalDistance = 0;
@@ -70,7 +70,8 @@ public class GetLocations : MonoBehaviour
                 map.UpdateMap(newLocation, map.Zoom);
                 Calcdistance(oldgps[0], oldgps[1], Input.location.lastData.latitude, Input.location.lastData.longitude);
                 distanceText.text = ("Distance: " + Math.Round(totalDistance, 2) + " km").Replace('.', ',');
-                pointText.text = "Points: " + pointclass.setPoints(totalDistance, amountMeters);
+                pointText.text = "Points: " + pointClass.setPoints(totalDistance, amountMeters);
+
 
                 oldLocation = newLocation;
                 oldgps[0] = Input.location.lastData.latitude;

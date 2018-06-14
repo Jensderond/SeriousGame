@@ -25,6 +25,13 @@ public class points : MonoBehaviour {
 
     void OnApplicationQuit()
     {
-       // GameController.gameController.Points = Points;
+        // GameController.gameController.Points = Points;
+    }
+    void OnApplicationPause(bool isPaused)
+    {
+        if (isPaused)
+        {
+            // GameController.gameController.Points = Points;
+        }
     }
 }

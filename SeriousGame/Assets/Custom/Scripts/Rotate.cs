@@ -17,22 +17,17 @@ public class Rotate : MonoBehaviour
     {
         Input.location.Start();
         Input.compass.enabled = true;
- 
+
 
     }
 
     // Update is called once per frame
-    void FixedUpdate ()
+    void FixedUpdate()
     {
         Quaternion_Rotate_From = transform.rotation;
         Quaternion_Rotate_To = Quaternion.Euler(0, Input.compass.trueHeading * Rotation_Speed * Rotation_Friction, 0);
 
         transform.rotation = Quaternion.Lerp(Quaternion_Rotate_From, Quaternion_Rotate_To, Time.deltaTime * Rotation_Smoothness);
-    
-    //new WaitForSeconds(2);
-    //var speed = Quaternion.Euler(0, Input.compass.trueHeading, 0);
-    //print("hallo " + speed);
-    //transform.rotation = speed ;
-}
+    }
 
 }
