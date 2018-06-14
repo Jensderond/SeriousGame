@@ -19,6 +19,9 @@ public class GameController : MonoBehaviour
     public DateTime CurrentDate;
     public int Points;
 
+    public int WaterItems;
+    public int FoodItems;
+
 
     private void Awake()
     {
@@ -49,6 +52,8 @@ public class GameController : MonoBehaviour
             CurrentDate = System.DateTime.Now;
             TimeSpan difference = CurrentDate.Subtract(OldDate);
             OfflineHours = difference.Hours;
+            WaterItems = playerData.WaterItems;
+            FoodItems = playerData.FoodItems;
         }
     }
 
@@ -62,7 +67,9 @@ public class GameController : MonoBehaviour
             FoodLevel = FoodLevel,
             WaterLevel = WaterLevel,
             OldDate = System.DateTime.Now,
-            Points = Points
+            Points = Points,
+            WaterItems = WaterItems,
+            FoodItems = FoodItems
 
         };
 
@@ -91,4 +98,6 @@ class PlayerData
     public float WaterLevel { get; set; }
     public DateTime OldDate { get; set; }
     public int Points { get; set; }
+    public int WaterItems { get; set; }
+    public int FoodItems { get; set; }
 }
