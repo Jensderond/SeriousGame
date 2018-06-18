@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     public DateTime OldDate;// { get; set; }
     public DateTime CurrentDate;
     public int Points;
+    public bool FirstTime;
 
     public int WaterItems;
     public int FoodItems;
@@ -45,15 +46,15 @@ public class GameController : MonoBehaviour
             PlayerData playerData = (PlayerData)binaryFormatter.Deserialize(fileStream);
 
             EnergyLevel = playerData.EnergyLevel;
-            FoodLevel = playerData.FoodLevel;
             WaterLevel = playerData.WaterLevel;
-            OldDate = playerData.OldDate;
-            Points = playerData.Points;
-            CurrentDate = System.DateTime.Now;
+            FoodLevel = playerData.FoodLevel;
+            CurrentDate = DateTime.Now;
             TimeSpan difference = CurrentDate.Subtract(OldDate);
             OfflineHours = difference.Hours;
             WaterItems = playerData.WaterItems;
             FoodItems = playerData.FoodItems;
+            OldDate = playerData.OldDate;
+            Points = playerData.Points;
         }
     }
 
@@ -63,6 +64,7 @@ public class GameController : MonoBehaviour
         FileStream fileStream = File.Create(Application.persistentDataPath + "playerInfo.data");
         PlayerData playerData = new PlayerData
         {
+            FirstTime = FirstTime,
             EnergyLevel = EnergyLevel,
             FoodLevel = FoodLevel,
             WaterLevel = WaterLevel,
@@ -77,22 +79,12 @@ public class GameController : MonoBehaviour
         fileStream.Close();
     }
 
-
-    // Use this for initialization
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
 
 [Serializable]
 class PlayerData
 {
+    public bool FirstTime { get; set; }
     public float EnergyLevel { get; set; }
     public float FoodLevel { get; set; }
     public float WaterLevel { get; set; }
@@ -100,4 +92,5 @@ class PlayerData
     public int Points { get; set; }
     public int WaterItems { get; set; }
     public int FoodItems { get; set; }
+
 }
