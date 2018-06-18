@@ -20,6 +20,9 @@ public class GameController : MonoBehaviour
     public int Points;
     public bool FirstTime;
 
+    public int WaterItems;
+    public int FoodItems;
+
 
     private void Awake()
     {
@@ -43,13 +46,15 @@ public class GameController : MonoBehaviour
             PlayerData playerData = (PlayerData)binaryFormatter.Deserialize(fileStream);
 
             EnergyLevel = playerData.EnergyLevel;
-            CurrentDate = DateTime.Now;
+            WaterLevel = playerData.WaterLevel;
             FoodLevel = playerData.FoodLevel;
+            CurrentDate = DateTime.Now;
             TimeSpan difference = CurrentDate.Subtract(OldDate);
             OfflineHours = difference.Hours;
+            WaterItems = playerData.WaterItems;
+            FoodItems = playerData.FoodItems;
             OldDate = playerData.OldDate;
             Points = playerData.Points;
-            WaterLevel = playerData.WaterLevel;
         }
     }
 
@@ -59,12 +64,15 @@ public class GameController : MonoBehaviour
         FileStream fileStream = File.Create(Application.persistentDataPath + "playerInfo.data");
         PlayerData playerData = new PlayerData
         {
-            EnergyLevel = EnergyLevel,
             FirstTime = FirstTime,
+            EnergyLevel = EnergyLevel,
             FoodLevel = FoodLevel,
-            OldDate = DateTime.Now,
+            WaterLevel = WaterLevel,
+            OldDate = System.DateTime.Now,
             Points = Points,
-            WaterLevel = WaterLevel
+            WaterItems = WaterItems,
+            FoodItems = FoodItems
+
         };
 
         binaryFormatter.Serialize(fileStream, playerData);
@@ -76,10 +84,13 @@ public class GameController : MonoBehaviour
 [Serializable]
 class PlayerData
 {
-    public float EnergyLevel { get; set; }
     public bool FirstTime { get; set; }
+    public float EnergyLevel { get; set; }
     public float FoodLevel { get; set; }
+    public float WaterLevel { get; set; }
     public DateTime OldDate { get; set; }
     public int Points { get; set; }
-    public float WaterLevel { get; set; }
+    public int WaterItems { get; set; }
+    public int FoodItems { get; set; }
+
 }

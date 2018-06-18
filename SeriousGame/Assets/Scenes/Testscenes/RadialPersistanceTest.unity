@@ -152,6 +152,41 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114658965323295496, guid: 0c0806c51fb84b342b581c8839f3d11e,
+        type: 2}
+      propertyPath: OfflineHours
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114658965323295496, guid: 0c0806c51fb84b342b581c8839f3d11e,
+        type: 2}
+      propertyPath: Points
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114658965323295496, guid: 0c0806c51fb84b342b581c8839f3d11e,
+        type: 2}
+      propertyPath: WaterItems
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114658965323295496, guid: 0c0806c51fb84b342b581c8839f3d11e,
+        type: 2}
+      propertyPath: FoodItems
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114658965323295496, guid: 0c0806c51fb84b342b581c8839f3d11e,
+        type: 2}
+      propertyPath: FoodLevel
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114658965323295496, guid: 0c0806c51fb84b342b581c8839f3d11e,
+        type: 2}
+      propertyPath: EnergyLevel
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114658965323295496, guid: 0c0806c51fb84b342b581c8839f3d11e,
+        type: 2}
+      propertyPath: WaterLevel
+      value: 55
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c0806c51fb84b342b581c8839f3d11e, type: 2}
   m_IsPrefabParent: 0
