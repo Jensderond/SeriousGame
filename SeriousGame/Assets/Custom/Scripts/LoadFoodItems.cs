@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UpdatePointsOnStart : MonoBehaviour
+public class LoadFoodItems : MonoBehaviour
 {
 
-    public Transform pointText;
     void Start()
     {
-        pointText.GetComponent<Text>().text ="Points: "+ GameController.gameController.Points.ToString();
+        gameObject.GetComponent<Text>().text = ((int)GameController.gameController.FoodItems).ToString() + "x";
     }
 
     // Update is called once per frame
