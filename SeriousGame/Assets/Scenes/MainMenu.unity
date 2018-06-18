@@ -1049,7 +1049,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Healt tip of the day:'
+  m_Text: 'Health tip of the day:'
 --- !u!222 &375813460
 CanvasRenderer:
   m_ObjectHideFlags: 0
