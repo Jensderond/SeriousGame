@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AdjustDataScript : MonoBehaviour {
+public class AdjustDataScript : MonoBehaviour
+{
 
     private void OnGUI()
     {

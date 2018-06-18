@@ -9,12 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 77b78b7939e2305479f578d30a991988
   - enabled: 0
-    path: Assets/Unity ui/Scenes/Draggable Panel.unity
-    guid: 838436750d0cf48a685923371f66cea6
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/DogConditionMenu.unity
-    guid: 5e3afedf074b1d04881a716ae02c7895
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/LivingRoom.unity
     guid: 0d7fd31e29ecbef468f341d97d33793f
+  - enabled: 1
+    path: Assets/Scenes/Map.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}
