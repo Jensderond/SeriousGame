@@ -49,7 +49,7 @@ public class GameController : MonoBehaviour
             WaterLevel = playerData.WaterLevel;
             FoodLevel = playerData.FoodLevel;
             CurrentDate = DateTime.Now;
-            TimeSpan difference = CurrentDate.Subtract(OldDate);
+            TimeSpan difference = CurrentDate.Subtract(playerData.OldDate);
             OfflineHours = difference.Hours;
             WaterItems = playerData.WaterItems;
             FoodItems = playerData.FoodItems;
