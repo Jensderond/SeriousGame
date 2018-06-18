@@ -20,7 +20,7 @@ public class GetLocations : MonoBehaviour
     {
         pointClass = new Points();
         var anim = GetComponent<Animator>();
-        int walkHash = Animator.StringToHash("walk");
+        int walkHash = Animator.StringToHash("Walk");
         totalDistance = 0;
         // First, check if user has location service enabled
         if (!Input.location.isEnabledByUser)
