@@ -21,7 +21,7 @@ public class SampleButton : MonoBehaviour {
         item = currentItem;
         nameLabel.text = item.itemName;
         iconImage.sprite = item.icon;
-        priceText.text = item.price.ToString() + " Punten";
+        priceText.text = item.price.ToString() + " Points";
         scrollList = currentScrollList;
 
     }

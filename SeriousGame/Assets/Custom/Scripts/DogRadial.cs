@@ -9,6 +9,7 @@ public class DogRadial : MonoBehaviour
     [Header("OBJECTS")]
     public Transform loadingBar;
     public Transform textPercent;
+    public Transform amountOfItems;
 
     [Header("VARIABLES (IN-GAME)")]
     public bool isOn;
@@ -43,7 +44,7 @@ public class DogRadial : MonoBehaviour
         }
 
         int offlineDecay = GameController.gameController.OfflineHours * 5;
-
+        GameController.gameController.OfflineHours = 0;
         // give them a couple of seconds to save their pet... so se to 1 instead of 0
         if ((specifiedValue - offlineDecay) > 1)
         {
@@ -104,18 +105,48 @@ public class DogRadial : MonoBehaviour
     }
     public void AddToSpecifiedPercentage(float amountToAdd)
     {
+       // bool canBuyItems = Can;
+             
         isFilling = true;
-        if (this.specifiedValue + amountToAdd > 100)
+        if (this.specifiedValue + amountToAdd > 100 && CanBuyItems())
         {
             specifiedValue = 100;
             UpdatePersistance();
         }
-        else
+        else if(CanBuyItems())
         {
             specifiedValue += amountToAdd;
             UpdatePersistance();
         }
+
+     
+
         isFilling = false;
+    }
+
+   private bool CanBuyItems()
+    {
+        bool hasItems = false;
+        switch (currentRadial)
+        {
+            case RadialOptions.WaterLevel:
+                if (GameController.gameController.WaterItems > 0)
+                {
+                    hasItems = true;
+                    GameController.gameController.WaterItems--;
+                    amountOfItems.GetComponent<Text>().text = GameController.gameController.WaterItems+ "x";
+                }
+                break;
+            case RadialOptions.FoodLevel:
+               if( GameController.gameController.FoodItems > 0)
+                {
+                    hasItems = true;
+                    GameController.gameController.FoodItems--;
+                    amountOfItems.GetComponent<Text>().text = GameController.gameController.FoodItems + "x";
+                }
+                break;        
+        }
+        return hasItems;
     }
 
     private void UpdatePersistance()
