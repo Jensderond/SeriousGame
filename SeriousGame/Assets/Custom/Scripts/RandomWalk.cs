@@ -19,10 +19,9 @@ public class RandomWalk : MonoBehaviour
         if (Time.time > nextActionTime)
         {
             nextActionTime += period;
-            
-            xPos = Random.Range(-7f, 7f);
-            yPos = Random.Range(0f, 20f);
-            desiredPos = Vector3.Lerp(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(xPos, 0, yPos), Time.deltaTime * speed);
+            xPos = Random.Range(-1.5f, 1.5f);
+            yPos = Random.Range(-4f, 4f);
+            desiredPos = Vector3.SlerpUnclamped(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(Random.insideUnitCircle.x * xPos, 0, Random.insideUnitCircle.y * yPos), Time.deltaTime * speed);
             transform.position = desiredPos ;
         }
 
