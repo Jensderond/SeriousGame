@@ -20,8 +20,8 @@ public class RandomWalk : MonoBehaviour
         {
             nextActionTime += period;
             
-            xPos = Random.Range(-7f, 7f);
-            yPos = Random.Range(0f, 20f);
+            xPos = Random.Range(-7f, -24f);
+            yPos = Random.Range(-20f, 20f);
             desiredPos = Vector3.Lerp(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(xPos, 0, yPos), Time.deltaTime * speed);
             transform.position = desiredPos ;
         }
