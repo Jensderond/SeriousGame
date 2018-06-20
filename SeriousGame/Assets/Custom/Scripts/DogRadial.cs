@@ -25,6 +25,8 @@ public class DogRadial : MonoBehaviour
 
     public enum RadialOptions { WaterLevel, FoodLevel, EnergyLevel };
     public RadialOptions currentRadial;
+    [Header("ENABLE CHEATS")]
+    public bool cheatsActive;
 
 
     private bool isFilling;
@@ -55,6 +57,7 @@ public class DogRadial : MonoBehaviour
             specifiedValue = 1;
         }
         currentPercent = specifiedValue;
+        InvokeRepeating("UpdatePersistance", 2.0f, 0.5f); //start in 2sec and save data twice every second instead of 60times a second
     }
 
     void Update()
@@ -95,8 +98,8 @@ public class DogRadial : MonoBehaviour
         // when above 1% and not filling up then decay
         if (currentPercent >= 1 && specifiedValue >= 1 && isOn && isFilling == false)
         {
-            specifiedValue -= (float)(decayPerTick / 1000);
-            UpdatePersistance();
+            specifiedValue -= (float)(decayPerTick / 3000);
+           // UpdatePersistance();
             // currentPercent -= decayPerTick;
         }
 
@@ -104,14 +107,18 @@ public class DogRadial : MonoBehaviour
         loadingBar.GetComponent<Image>().fillAmount = currentPercent / 100;
         textPercent.GetComponent<Text>().text = ((int)currentPercent).ToString("F0") + "%";
     }
+    private void OnDisable()
+    {
+        UpdatePersistance();
+    }
     public void AddToSpecifiedPercentage(float amountToAdd)
     {
        // bool canBuyItems = Can;
              
         isFilling = true;
-        if (this.specifiedValue + amountToAdd > 100 && CanBuyItems())
+        if (this.specifiedValue + amountToAdd > (float)100 && CanBuyItems())
         {
-            specifiedValue = 100;
+            specifiedValue = (float)100;
             UpdatePersistance();
         }
         else if(CanBuyItems())
@@ -145,7 +152,15 @@ public class DogRadial : MonoBehaviour
                     GameController.gameController.FoodItems--;
                     amountOfItems.GetComponent<Text>().text = GameController.gameController.FoodItems + "x";
                 }
-                break;        
+                break;
+            case RadialOptions.EnergyLevel:
+                if (GameController.gameController.EnergyItems > 0)
+                {
+                    hasItems = true;
+                    GameController.gameController.EnergyItems--;
+                    amountOfItems.GetComponent<Text>().text = GameController.gameController.EnergyItems + "x";
+                }
+                break;
         }
         return hasItems;
     }
@@ -164,5 +179,20 @@ public class DogRadial : MonoBehaviour
                 GameController.gameController.EnergyLevel = specifiedValue;
                 break;
         }
+    }
+
+    //for debug and testing only
+    public void SetAllValuesTo(int target)
+    {
+#if UNITY_EDITOR
+        if (cheatsActive)
+        {
+            specifiedValue = target;
+
+            GameController.gameController.WaterLevel = target;
+            GameController.gameController.FoodLevel = target;
+            GameController.gameController.EnergyLevel = target;
+        }
+#endif
     }
 }

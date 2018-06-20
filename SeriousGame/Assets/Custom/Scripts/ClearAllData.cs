@@ -17,15 +17,17 @@ public class ClearAllData : MonoBehaviour {
 
     public void ClearData()
     {
-        GameController.gameController.WaterLevel = 1f;
-        GameController.gameController.FoodLevel = 1f;
-        GameController.gameController.EnergyLevel = 1f;
+        GameController.gameController.WaterLevel = 0;
+        GameController.gameController.FoodLevel = 0;
+        GameController.gameController.EnergyLevel = 0;
         GameController.gameController.FoodItems = 0;
         GameController.gameController.WaterItems = 0;
         GameController.gameController.FirstTime = true;
         GameController.gameController.Points = 0;
         GameController.gameController.OldDate = DateTime.Now;
+        GameController.gameController.CurrentDate = DateTime.Now;
         GameController.gameController.OfflineHours = 0;
-
+        // UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        //GameController.gameController.SaveData();
     }
 }

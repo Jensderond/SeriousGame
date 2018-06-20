@@ -744,7 +744,7 @@ MonoBehaviour:
   restart: 0
   currentPercent: 50
   speed: 6
-  decayPerTick: 1
+  decayPerTick: 0.7
   enableSpecified: 1
   enableLoop: 0
   specifiedValue: 50
@@ -912,7 +912,7 @@ MonoBehaviour:
   restart: 0
   currentPercent: 50
   speed: 8
-  decayPerTick: 1
+  decayPerTick: 0.6
   enableSpecified: 1
   enableLoop: 0
   specifiedValue: 50
@@ -935,7 +935,7 @@ MonoBehaviour:
   restart: 0
   currentPercent: 50
   speed: 7
-  decayPerTick: 1
+  decayPerTick: 0.7
   enableSpecified: 1
   enableLoop: 0
   specifiedValue: 50
