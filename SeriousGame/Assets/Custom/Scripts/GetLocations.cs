@@ -140,6 +140,10 @@ public class GetLocations : MonoBehaviour
             GameController.gameController.Points = points;
         }
     }
+    void OnApplicationQuit()
+    {
+        GameController.gameController.Points = points;
+    }
     public void Cheat()
     {
         totalDistance = totalDistance + 0.05;
