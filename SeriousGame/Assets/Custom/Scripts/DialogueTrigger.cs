@@ -8,9 +8,11 @@ public class DialogueTrigger : MonoBehaviour {
 
     private void Start()
     {
-        if ( GameController.gameController.FirstTime )
+        GameController.gameController.FirstTime = false;
+        if ( !GameController.gameController.FirstTime )
         {
             TriggerDialogue();
+            GameController.gameController.FirstTime = true;
             //TODO: set firstTime to false after running this once
         }
     }

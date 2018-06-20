@@ -378,6 +378,7 @@ GameObject:
   - component: {fileID: 812133266}
   - component: {fileID: 812133267}
   - component: {fileID: 812133268}
+  - component: {fileID: 812133269}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -400,7 +401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000004126921}
+  m_AnchoredPosition: {x: -0.0000006100321, y: 0.000013802567}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &812133266
@@ -452,15 +453,25 @@ MonoBehaviour:
   itemList:
   - itemName: Food
     icon: {fileID: 21300000, guid: 6410ee84909c52546be3dece81113978, type: 3}
-    price: 10
+    price: 15
     ItemType: 0
   - itemName: Water
     icon: {fileID: 21300000, guid: 7a36158a2c2724c4d8fb9be96005e55d, type: 3}
     price: 10
     ItemType: 1
+  - itemName: Treats
+    icon: {fileID: 21300000, guid: 458810cab797e4f8cac0df0e7cac7649, type: 3}
+    price: 35
+    ItemType: 1
   contentPanel: {fileID: 812133265}
   myPointsDisplay: {fileID: 1760357976}
   buttonObjectPool: {fileID: 2087261961}
+--- !u!222 &812133269
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 812133264}
 --- !u!1 &927247599
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,7 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.44206142, g: 1, b: 0.76862746, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -842,7 +853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.5896226, g: 1, b: 0.8510728, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1294,7 +1305,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1162357462}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1441,12 +1452,12 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96

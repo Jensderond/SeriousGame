@@ -11,7 +11,7 @@ public class Item
     public int price = 1;
     public Buyable ItemType;
 }
-public enum Buyable { FOOD, WATER };
+public enum Buyable { FOOD, WATER, ENERGY };
 public class ShopScrollList : MonoBehaviour
 {
 
@@ -57,6 +57,7 @@ public class ShopScrollList : MonoBehaviour
             Item item = itemList[i];
             GameObject newButton = buttonObjectPool.GetObject();
             newButton.transform.SetParent(contentPanel);
+            newButton.transform.localScale = new Vector3(1, 1, 1);
 
             SampleButton sampleButton = newButton.GetComponent<SampleButton>();
             sampleButton.Setup(item, this);
@@ -73,13 +74,16 @@ public class ShopScrollList : MonoBehaviour
             switch (item.ItemType)
             {
                 case Buyable.FOOD:
-                    GameController.gameController.FoodItems++;
+                    GameController.gameController.FoodItems+=1;
                     break;
                 case Buyable.WATER:
-                    GameController.gameController.WaterItems++;
+                    GameController.gameController.WaterItems+=1;
+                    break;
+                case Buyable.ENERGY:
+                    GameController.gameController.EnergyItems += 1;
                     break;
             }
-            GameController.gameController.FoodItems++;
+           
             RefreshDisplay();
         }
     }

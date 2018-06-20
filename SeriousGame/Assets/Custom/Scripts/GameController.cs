@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
 
     public int WaterItems;
     public int FoodItems;
+    public int EnergyItems;
 
 
     private void Awake()
@@ -53,8 +54,30 @@ public class GameController : MonoBehaviour
             OfflineHours = difference.Hours;
             WaterItems = playerData.WaterItems;
             FoodItems = playerData.FoodItems;
+            EnergyItems = playerData.EnergyItems;
             OldDate = playerData.OldDate;
             Points = playerData.Points;
+        }
+        else
+        {
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            FileStream fileStream = File.Create(Application.persistentDataPath + "playerInfo.data");
+            PlayerData playerData = new PlayerData
+            {
+                FirstTime = true,
+                EnergyLevel = 86,
+                FoodLevel = 86,
+                WaterLevel = 86,
+                OldDate = System.DateTime.Now,
+                Points = 50,
+                WaterItems = 5,
+                FoodItems = 5,
+                EnergyItems = 5
+
+            };
+
+            binaryFormatter.Serialize(fileStream, playerData);
+            fileStream.Close();
         }
     }
 
@@ -62,16 +85,17 @@ public class GameController : MonoBehaviour
     {
         BinaryFormatter binaryFormatter = new BinaryFormatter();
         FileStream fileStream = File.Create(Application.persistentDataPath + "playerInfo.data");
-        PlayerData playerData = new PlayerData
-        {
-            FirstTime = FirstTime,
-            EnergyLevel = EnergyLevel,
-            FoodLevel = FoodLevel,
-            WaterLevel = WaterLevel,
-            OldDate = System.DateTime.Now,
-            Points = Points,
-            WaterItems = WaterItems,
-            FoodItems = FoodItems
+    PlayerData playerData = new PlayerData
+    {
+        FirstTime = FirstTime,
+        EnergyLevel = EnergyLevel,
+        FoodLevel = FoodLevel,
+        WaterLevel = WaterLevel,
+        OldDate = System.DateTime.Now,
+        Points = Points,
+        WaterItems = WaterItems,
+        FoodItems = FoodItems,
+        EnergyItems = EnergyItems
 
         };
 
@@ -79,6 +103,15 @@ public class GameController : MonoBehaviour
         fileStream.Close();
     }
 
+    private void OnApplicationQuit()
+    {
+        OnDisable();
+    }
+
+    public void SaveData()
+    {
+        OnDisable();
+    }
 }
 
 [Serializable]
@@ -92,5 +125,6 @@ class PlayerData
     public int Points { get; set; }
     public int WaterItems { get; set; }
     public int FoodItems { get; set; }
+    public int EnergyItems { get; set; }
 
 }
