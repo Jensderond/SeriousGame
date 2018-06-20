@@ -54,6 +54,7 @@ public class DogRadial : MonoBehaviour
         {
             specifiedValue = 1;
         }
+        currentPercent = specifiedValue;
     }
 
     void Update()

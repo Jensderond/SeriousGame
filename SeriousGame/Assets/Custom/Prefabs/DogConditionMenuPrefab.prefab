@@ -692,7 +692,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -739,6 +739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingBar: {fileID: 224539342836740816}
   textPercent: {fileID: 224173577877668568}
+  amountOfItems: {fileID: 224933396434724458}
   isOn: 1
   restart: 0
   currentPercent: 50
@@ -746,7 +747,7 @@ MonoBehaviour:
   decayPerTick: 1
   enableSpecified: 1
   enableLoop: 0
-  specifiedValue: 39
+  specifiedValue: 50
   currentRadial: 0
 --- !u!114 &114374737815024288
 MonoBehaviour:
@@ -906,6 +907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingBar: {fileID: 224581627735593298}
   textPercent: {fileID: 224429968729070774}
+  amountOfItems: {fileID: 0}
   isOn: 1
   restart: 0
   currentPercent: 50
@@ -913,7 +915,7 @@ MonoBehaviour:
   decayPerTick: 1
   enableSpecified: 1
   enableLoop: 0
-  specifiedValue: 35
+  specifiedValue: 50
   currentRadial: 2
 --- !u!114 &114439868652016136
 MonoBehaviour:
@@ -928,6 +930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingBar: {fileID: 224197917097926554}
   textPercent: {fileID: 224814503194057652}
+  amountOfItems: {fileID: 224920721702318960}
   isOn: 1
   restart: 0
   currentPercent: 50
@@ -935,7 +938,7 @@ MonoBehaviour:
   decayPerTick: 1
   enableSpecified: 1
   enableLoop: 0
-  specifiedValue: 30
+  specifiedValue: 50
   currentRadial: 1
 --- !u!114 &114473976965291076
 MonoBehaviour:

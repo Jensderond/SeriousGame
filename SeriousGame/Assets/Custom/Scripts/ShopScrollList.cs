@@ -73,10 +73,10 @@ public class ShopScrollList : MonoBehaviour
             switch (item.ItemType)
             {
                 case Buyable.FOOD:
-                    GameController.gameController.FoodItems++;
+                    GameController.gameController.FoodItems+=1;
                     break;
                 case Buyable.WATER:
-                    GameController.gameController.WaterItems++;
+                    GameController.gameController.WaterItems+=1;
                     break;
             }
             GameController.gameController.FoodItems++;

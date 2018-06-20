@@ -56,6 +56,26 @@ public class GameController : MonoBehaviour
             OldDate = playerData.OldDate;
             Points = playerData.Points;
         }
+        else
+        {
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            FileStream fileStream = File.Create(Application.persistentDataPath + "playerInfo.data");
+            PlayerData playerData = new PlayerData
+            {
+                FirstTime = true,
+                EnergyLevel = 25,
+                FoodLevel = 25,
+                WaterLevel = 25,
+                OldDate = System.DateTime.Now,
+                Points = 50,
+                WaterItems = 5,
+                FoodItems = 5
+
+            };
+
+            binaryFormatter.Serialize(fileStream, playerData);
+            fileStream.Close();
+        }
     }
 
     private void OnDisable()
@@ -79,6 +99,10 @@ public class GameController : MonoBehaviour
         fileStream.Close();
     }
 
+    private void OnApplicationQuit()
+    {
+        OnDisable();
+    }
 }
 
 [Serializable]

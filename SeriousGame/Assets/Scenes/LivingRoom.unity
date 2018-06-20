@@ -654,21 +654,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114327470096614964, guid: a20d5ec3cba77f04eba258e422d506fb,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114357177974747652, guid: a20d5ec3cba77f04eba258e422d506fb,
-        type: 2}
-      propertyPath: amountOfItems
-      value: 
-      objectReference: {fileID: 1016419025}
-    - target: {fileID: 114439868652016136, guid: a20d5ec3cba77f04eba258e422d506fb,
-        type: 2}
-      propertyPath: amountOfItems
-      value: 
-      objectReference: {fileID: 1985123373}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a20d5ec3cba77f04eba258e422d506fb, type: 2}
   m_IsPrefabParent: 0
@@ -7043,11 +7028,6 @@ Texture2D:
     offset: 0
     size: 0
     path: 
---- !u!224 &1016419025 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224933396434724458, guid: a20d5ec3cba77f04eba258e422d506fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 54461440}
 --- !u!28 &1017542602
 Texture2D:
   m_ObjectHideFlags: 0
@@ -13663,11 +13643,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ab336aa16c0bff44b38248b73687ce2, type: 3}
   m_IsPrefabParent: 0
---- !u!224 &1985123373 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224920721702318960, guid: a20d5ec3cba77f04eba258e422d506fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 54461440}
 --- !u!28 &1987556002
 Texture2D:
   m_ObjectHideFlags: 0
