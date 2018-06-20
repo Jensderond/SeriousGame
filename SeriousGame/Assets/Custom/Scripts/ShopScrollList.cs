@@ -57,6 +57,7 @@ public class ShopScrollList : MonoBehaviour
             Item item = itemList[i];
             GameObject newButton = buttonObjectPool.GetObject();
             newButton.transform.SetParent(contentPanel);
+            newButton.transform.localScale = new Vector3(1, 1, 1);
 
             SampleButton sampleButton = newButton.GetComponent<SampleButton>();
             sampleButton.Setup(item, this);
