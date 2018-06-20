@@ -13668,6 +13668,12 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114229618808235582, guid: e1fd0fc488c89304da2aac8162dee407,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 9669f9afb043e9d4ea149ddd0548114d,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e1fd0fc488c89304da2aac8162dee407, type: 2}
   m_IsPrefabParent: 0
